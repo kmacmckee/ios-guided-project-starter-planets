@@ -12,10 +12,10 @@ extension String {
     static let shouldShowPlutoKey = "shouldShowPlutoKey"
 }
 
-
-
 class SettingsViewController: UIViewController {
 
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
