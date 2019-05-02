@@ -13,16 +13,22 @@ class PlanetsCollectionViewController: UICollectionViewController {
     
     
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        <#code#>
+        return planetController.planets.count
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PlanetCell", for: indexPath) as! PlanetCollectionViewCell
         
-        cell.textLabel.text = "Mars"
+        let planet = planetController.planets[indexPath.item]   //CollectionViews use indexPath.item instead of indexPath.row
+        cell.textLabel.text = planet.name
+        cell.imageView.image = planet.image
         
         return cell
     }
+    
+    
+    let planetController = PlanetController()
     
     
 }
